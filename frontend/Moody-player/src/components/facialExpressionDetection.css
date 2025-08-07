@@ -1,0 +1,134 @@
+.logo{
+  background-color: white;
+  width:25rem;
+  height:5rem;
+  display: flex;
+  justify-content: flex-start;
+  margin-left:0.8rem;
+  margin-top:0.8rem;
+  border: 2px solid black;
+  border-radius: 1.5rem;
+   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(-45deg, #ff6a00, #ee0979, #ff6a00);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+
+.icon{
+  width:4rem;
+  height: 4rem;
+  margin-top: 0.3rem;
+  margin-left: 0.5rem;
+  border:3px solid rgb(253, 252, 254);
+  border-radius: 50%;
+  
+}
+
+.icon img{
+     width:100%;
+     object-fit: cover;
+    
+}
+
+.logo-text{
+  padding: 0.5rem;
+  font-weight: 800;
+}
+
+.logo-text h1 {
+  color: rgb(6, 6, 6);
+  font-size: 2rem;
+}
+
+.logo-text p {
+  color: white;
+  font-size: 1rem;
+}
+
+
+@keyframes pulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.mood-element{
+  width:24rem;
+  height:29rem;
+  margin-top:3rem;
+  border-radius: 2rem;
+  margin-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border: 2px solid black;
+  background: linear-gradient(-45deg, #ff6a00, #ee0979, #ff6a00);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+  
+}
+
+.user-video-feed{
+  width: 21rem;
+  margin: 2.3rem;
+  border-radius: 3rem;
+  border: 2px solid black;
+}
+
+.expression-box{
+display: flex;
+flex-direction: column;
+align-items: center;
+text-transform: capitalize;
+}
+
+.mood-element-btn{
+  margin:1rem;
+  background: linear-gradient(70deg, #141313, #5c258d);
+  border: none;
+  border-radius: 50px; 
+  color: #ffffff;
+  padding: 15px 35px;
+  
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.mood-element-btn:hover {
+  transform: translateY(-3px); 
+  box-shadow: 0 7px 20px rgba(240, 9, 116, 0.4);
+}
+
+.mood-element-btn:active {
+   transform: translateY(1px) scale(0.98); 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .logo {
+    width: 93rem;
+    height: 5rem;
+  }
+
+  .icon {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  .mood-element {
+    width:92rem;
+    height:30rem;
+    flex-direction: row;
+    
+  }
+  
+  
+}

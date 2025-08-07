@@ -1,0 +1,19 @@
+.footer{
+    color:white;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer span{
+    color: red;
+}
+
+
+@media screen and (min-width: 768px){
+    .footer {
+        font-size: 1rem;
+        padding: 0.3rem;
+        
+    }
+}

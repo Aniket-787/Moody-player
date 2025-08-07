@@ -1,0 +1,29 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+   
+}
+@keyframes pulseBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+html,body 
+#root{
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(-45deg, #49048a, #120b0f, #ef05ec);
+   overflow-x: hidden;
+  background-size: 200% 200%;
+  animation: pulseBackground 10s ease infinite;
+   background-position: 0% 50%;
+ 
+
+}
+
+
+

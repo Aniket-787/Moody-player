@@ -1,0 +1,94 @@
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.mood-songs{
+  width: 24rem;
+  height: auto;
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(-45deg, #ff6a00, #ee0979, #ff6a00);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  border-radius: 2rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+
+}
+
+.mood-songs h2{
+  color:white;
+  padding: 1.3rem;
+}
+
+.mood-songs h2:hover{
+  text-decoration: underline;
+  text-decoration-color:rgb(6, 242, 191);
+  
+}
+
+
+
+.song{
+   display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin: 0.5rem 2rem;
+    border: 2px solid black;
+    padding:0.5rem 2rem;
+    border-radius: 1rem;
+    transition: 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 0, 204, 0.5);
+    background: linear-gradient(135deg, #ff00cc, #333399);
+
+}
+
+.song:hover{
+  transform: scale(1.01);
+  box-shadow: 0 0 40px rgba(255, 0, 204, 0.8)
+}
+
+.title{
+  width:90%;
+}
+
+.title h3{
+  font-size: 1.5rem;
+  color:white;
+}
+
+.play-pause-btn button{
+  
+  font-size: 2rem;
+  margin-top: 0.7rem;
+  background-color: transparent;
+  border: none;
+}
+
+
+@media screen and (min-width: 768px) {
+  .mood-songs {
+    width: 92rem;
+    height: 30rem;
+  }
+    
+
+
+
+
+
+}
