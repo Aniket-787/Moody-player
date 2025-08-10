@@ -1,0 +1,49 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app-header {
+  text-align: center;
+  padding: 20px;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #ff00cc, #333399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-subtitle {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.app-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.detector-section,
+.songs-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 0, 204, 0.2);
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+}

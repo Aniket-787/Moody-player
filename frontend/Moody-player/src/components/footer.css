@@ -1,19 +1,8 @@
 .footer{
-    color:white;
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+  color:var(--muted);
+  text-align:center;
+  margin:1.2rem 0;
+  font-size:0.95rem;
+  opacity:0.9;
 }
-
-.footer span{
-    color: red;
-}
-
-
-@media screen and (min-width: 768px){
-    .footer {
-        font-size: 1rem;
-        padding: 0.3rem;
-        
-    }
-}
+.footer span{color:#ff3860;font-weight:800;}

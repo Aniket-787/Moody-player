@@ -1,134 +1,107 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220aa;
+  --accent1: #ff6a00;
+  --accent2: #ee0979;
+  --glass: rgba(255,255,255,0.06);
+  --muted: #9aa4b2;
+  --white: #f8fafc;
+}
+
+*{box-sizing:border-box;font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+
+.detector-wrapper{
+  width:100%;
+  max-width:1100px;
+  margin:1.2rem auto;
+  padding:1.2rem;
+  color:var(--white);
+}
+
+/* top brand row */
+.brand{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:1rem;
+}
+.brand-left{display:flex;align-items:center;gap:0.8rem;}
 .logo{
-  background-color: white;
-  width:25rem;
-  height:5rem;
-  display: flex;
-  justify-content: flex-start;
-  margin-left:0.8rem;
-  margin-top:0.8rem;
-  border: 2px solid black;
-  border-radius: 1.5rem;
-   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(-45deg, #ff6a00, #ee0979, #ff6a00);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
+  width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(238,9,121,0.18);
+}
+.logo img{width:70%;height:70%;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.4));}
+.brand-text h1{margin:0;font-size:1.2rem;letter-spacing:0.2px;}
+.brand-text p{margin:0;font-size:0.8rem;color:var(--muted);}
+
+/* mood badge */
+.mood-badge{
+  background: linear-gradient(90deg, rgba(255,106,0,0.15), rgba(238,9,121,0.12));
+  padding:8px 14px;border-radius:999px;font-weight:600;color:var(--white);font-size:0.9rem;border:1px solid rgba(255,255,255,0.04);
+}
+.mood-text{text-transform:capitalize;margin-left:6px;color:#fff;}
+
+/* main card: video + controls */
+.detector-card{
+  display:flex;
+  gap:1.2rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:18px;
+  padding:1rem;
+  box-shadow: 0 12px 40px rgba(2,6,23,0.6);
+  align-items:center;
 }
 
-.icon{
-  width:4rem;
-  height: 4rem;
-  margin-top: 0.3rem;
-  margin-left: 0.5rem;
-  border:3px solid rgb(253, 252, 254);
-  border-radius: 50%;
-  
+/* video frame */
+.video-frame{
+  width:360px;
+  min-height:260px;
+  border-radius:14px;
+  overflow:hidden;
+  position:relative;
+  border:1px solid rgba(255,255,255,0.04);
+  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+.user-video{width:100%;height:100%;object-fit:cover;display:block;background:#000;}
+.video-overlay{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
+}
+.overlay-icon{font-size:2.4rem;color:rgba(255,255,255,0.14);}
+.video-overlay.scanning::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(90deg, rgba(255,106,0,0.06), rgba(238,9,121,0.04));
+  animation: shimmer 2.4s infinite;
+}
+@keyframes shimmer{ 0%{background-position:0%} 100%{background-position:200%} }
+
+/* controls */
+.controls{flex:1;display:flex;flex-direction:column;gap:0.6rem;padding:0.6rem 0;}
+.current-label{margin:0;color:var(--muted);font-size:0.85rem;}
+.current-expression{
+  font-size:1.6rem;font-weight:700;text-transform:capitalize;color:var(--white);
+  padding:8px 12px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));width:max-content;
+  box-shadow: 0 8px 24px rgba(17,24,39,0.5);
 }
 
-.icon img{
-     width:100%;
-     object-fit: cover;
-    
+/* detect button */
+.detect-btn{
+  margin-top:0.6rem;
+  align-self:flex-start;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  border:none;padding:12px 22px;border-radius:999px;color:white;font-weight:700;cursor:pointer;
+  display:inline-flex;gap:10px;align-items:center;font-size:0.95rem;
+  box-shadow:0 10px 30px rgba(238,9,121,0.18);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
+.detect-btn:active{transform:translateY(1px) scale(.995);}
+.detect-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
 
-.logo-text{
-  padding: 0.5rem;
-  font-weight: 800;
-}
+/* small hint */
+.hint{color:var(--muted);font-size:0.85rem;margin-top:0.6rem;}
 
-.logo-text h1 {
-  color: rgb(6, 6, 6);
-  font-size: 2rem;
-}
-
-.logo-text p {
-  color: white;
-  font-size: 1rem;
-}
-
-
-@keyframes pulse {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.mood-element{
-  width:24rem;
-  height:29rem;
-  margin-top:3rem;
-  border-radius: 2rem;
-  margin-left: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-  border: 2px solid black;
-  background: linear-gradient(-45deg, #ff6a00, #ee0979, #ff6a00);
-    background-size: 400% 400%;
-    animation: gradient 10s ease infinite;
-  
-}
-
-.user-video-feed{
-  width: 21rem;
-  margin: 2.3rem;
-  border-radius: 3rem;
-  border: 2px solid black;
-}
-
-.expression-box{
-display: flex;
-flex-direction: column;
-align-items: center;
-text-transform: capitalize;
-}
-
-.mood-element-btn{
-  margin:1rem;
-  background: linear-gradient(70deg, #141313, #5c258d);
-  border: none;
-  border-radius: 50px; 
-  color: #ffffff;
-  padding: 15px 35px;
-  
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.mood-element-btn:hover {
-  transform: translateY(-3px); 
-  box-shadow: 0 7px 20px rgba(240, 9, 116, 0.4);
-}
-
-.mood-element-btn:active {
-   transform: translateY(1px) scale(0.98); 
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-
-
-@media screen and (min-width: 768px) {
-  .logo {
-    width: 93rem;
-    height: 5rem;
-  }
-
-  .icon {
-    width: 4rem;
-    height: 4rem;
-  }
-  
-  .mood-element {
-    width:92rem;
-    height:30rem;
-    flex-direction: row;
-    
-  }
-  
-  
+/* responsive */
+@media (max-width:880px){
+  .detector-card{flex-direction:column;align-items:stretch;}
+  .video-frame{width:100%;height:260px;}
 }
